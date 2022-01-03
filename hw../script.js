@@ -1,17 +1,25 @@
-const containerEl = document.getElementById('main');
+import { LoginComponent } from "./components/login.js";
+import { UserListComponent } from "./components/userList.js";
 
-const login = new LoginComponent(
-  document.getElementById("login_template").innerText,
-    containerEl,
-);
+const containerEl = document.getElementById("main");
 
-login.onSuccess = onSuccessLogin;
+if (localStorage.getItem("token")) {
+  onSuccessLogin();
+} else {
+  onLoginPageLoad();
+}
 
 function onSuccessLogin() {
-    const userList = new UserListComponent(
-      document.getElementById("user_list_template").innerText,
-      document.getElementById("user_card_template").innerText,
-
-      containerEl
-    );
+  const userList = new UserListComponent(
+    document.getElementById("user_list_template").innerText,
+    document.getElementById("user_card_template").innerText,
+    containerEl
+  );
+}
+function onLoginPageLoad() {
+  const login = new LoginComponent(
+    document.getElementById("login_template").innerText,
+    containerEl
+  );
+  login.onSuccess = onSuccessLogin;
 }
