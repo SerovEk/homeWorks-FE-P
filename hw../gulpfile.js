@@ -25,7 +25,7 @@ function htmlTask() {
 
 function scriptTask() {
   return gulp
-    .src("app/**/*.js")
+    .src("app/*.js")
     .pipe(concat("script.js"))
     .pipe(minify())
     .pipe(gulp.dest("dist"));

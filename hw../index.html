@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../dist/styles/style.css" />
-    <script src="./server/api.js" type="module" defer></script>
-    <script src="./utilits/templating.js" type="module" defer></script>
-    <script src="./components/login.js" type="module" defer></script>
-    <script src="./components/userList.js" type="module" defer></script>
+    <script src="./app/server/api.js" type="module" defer></script>
+    <script src="./app/utilits/templating.js" type="module" defer></script>
+    <script src="./app/components/login.js" type="module" defer></script>
+    <script src="./app/components/userList.js" type="module" defer></script>
 
-
-    <script src="./script.js" type="module" defer></script>
+    <script src="./app/script.js" type="module" defer></script>
   </head>
   <body>
     <div class="container" id="main"></div>
@@ -28,7 +27,7 @@
           <button type="button" class="btn-submit">Login</button>
       </form>
     </script>
-    
+
     <script type="text-template" id="user_list_template">
       <div class="list-container" id="user-list">
 
