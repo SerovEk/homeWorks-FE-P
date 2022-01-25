@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/styles/style.css" />
+    <script src="./app/server/api.js" type="module" defer></script>
+    <script src="./app/utilits/templating.js" type="module" defer></script>
+    <script src="./app/components/login.js" type="module" defer></script>
+    <script src="./app/components/userList.js" type="module" defer></script>
+
+    <script src="./app/script.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="container" id="main"></div>
+    <script type="text-template" id="login_template">
+          <form id="login_form">
+          <div class="login-firld">
+              <label for="email-field">Email</label>
+              <input type="email" id="email_field" class="email-field">
+          </div>
+              <div class="login-firld">
+              <label for="password-field">Password</label>
+              <input type="password" id="password_field" class="password-field">
+          </div>
+          <button type="button" class="btn-submit">Login</button>
+      </form>
+    </script>
+
+    <script type="text-template" id="user_list_template">
+      <div class="list-container" id="user-list">
+
+      </div>
+      <div class="action-container">
+          <button type="button" class="btn-action" id="action-prev">Previous</button>
+          <div class="pages" id="pages"></div>
+          <button type="button" class="btn-action" id="action-next">Next</button>
+      </div>
+    </script>
+    <script type="text-template" id="user_card_template">
+      <section class="section">
+        <div class="avatar">
+          <img data-src="{{avatar}}" alt="{{name}}" src="{{avatar}}" />
+        </div>
+        <div class="profile">
+          <h4 class="name">{{name}}</h4>
+          <p>{{email}}</p>
+        </div>
+      </section>
+    </script>
+  </body>
+</html>
